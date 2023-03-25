@@ -17,7 +17,7 @@ import javax.inject.Singleton
 object NetworkModule {
     @Singleton
     @Provides
-    fun provideRetrofit(client: OkHttpClient):Retrofit{
+    fun provideRetrofit(client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org/3/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -27,7 +27,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideMovieApiClient(retrofit: Retrofit):MovieApiClient{
+    fun provideMovieApiClient(retrofit: Retrofit): MovieApiClient {
         return retrofit.create(MovieApiClient::class.java)
     }
 

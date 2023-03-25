@@ -1,5 +1,6 @@
 package com.example.moviesample.ui.main
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -13,11 +14,13 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val mainActivityViewModel: MainActivityViewModel by viewModels()
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
 
         val popularMovieFragment = PopularMovieFragment()
@@ -26,16 +29,5 @@ class MainActivity : AppCompatActivity() {
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer, popularMovieFragment).commit()
 
-
-
-
-
-/*
-        val popularMovieDetailFragment = PopularMovieDetailFragment()
-
-        val fragmentManager2: FragmentManager = supportFragmentManager
-        val fragmentTransaction2: FragmentTransaction = fragmentManager2.beginTransaction()
-        fragmentTransaction2.replace(R.id.fragmentContainer, popularMovieDetailFragment).commit()
-*/
     }
 }

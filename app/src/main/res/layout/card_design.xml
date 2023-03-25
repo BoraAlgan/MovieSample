@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="14dp"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="#4A4A4A"
             app:cardCornerRadius="36dp"
             app:contentPadding="17dp">
 
@@ -34,6 +34,7 @@
                     android:layout_marginBottom="17dp"
                     android:text="Release Date: "
                     android:textSize="9sp"
+                    android:textColor="#C1C1C1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/durationTextView"
                     app:layout_constraintTop_toBottomOf="@+id/movietitleTextView"
@@ -47,6 +48,7 @@
                     android:layout_marginBottom="17dp"
                     android:text="Language: "
                     android:textSize="9sp"
+                    android:textColor="#C1C1C1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/genreTextView"
                     app:layout_constraintTop_toBottomOf="@+id/movietitleTextView"
@@ -61,6 +63,7 @@
                     android:layout_marginBottom="17dp"
                     android:text="IMDB: "
                     android:textSize="9sp"
+                    android:textColor="#C1C1C1"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/movieImageView"
                     app:layout_constraintTop_toBottomOf="@+id/movietitleTextView"
@@ -83,6 +86,7 @@
                     android:layout_marginStart="19dp"
                     android:layout_marginTop="16dp"
                     android:text=" "
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintStart_toEndOf="@+id/movieImageView"
                     app:layout_constraintTop_toTopOf="parent" />

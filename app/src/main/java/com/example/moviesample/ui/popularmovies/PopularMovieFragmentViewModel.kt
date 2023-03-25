@@ -1,10 +1,9 @@
 package com.example.moviesample.ui.popularmovies
 
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.moviesample.data.MovieRepository
+import com.example.moviesample.data.remote.model.MovieDetailResponseModel
 import com.example.moviesample.data.remote.model.MovieResponseModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -21,18 +20,14 @@ class PopularMovieFragmentViewModel @Inject constructor(private val repository: 
         getPopularMovies()
     }
 
-     fun getPopularMovies() {
+    fun getPopularMovies() {
         viewModelScope.launch {
             val movies: List<MovieResponseModel> = repository.getAllPopularMoviesFromApi()
             if (movies.isNotEmpty()) {
+
                 liveData.value = movies
+
             }
-        }
-    }
-
-    fun randomMovie() {
-        viewModelScope.launch {
-
         }
     }
 
